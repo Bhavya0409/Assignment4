@@ -1,0 +1,21 @@
+.container {
+  .row {
+    margin-top: 20px;
+    .left {
+      display: flex;
+      flex-flow: column;
+      margin-right: 20px;
+
+      h2 {
+        align-self: center;
+        margin-bottom: 20px;
+      }
+
+      textarea {
+        padding: 5px 10px;
+        border-radius: 5px;
+        min-height: 200px;
+      }
+    }
+  }
+}
