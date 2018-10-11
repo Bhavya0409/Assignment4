@@ -1,20 +1,38 @@
 .container {
   .row {
     margin-top: 20px;
-    .left {
+
+    .side {
       display: flex;
       flex-flow: column;
       margin-right: 20px;
-
-      h2 {
-        align-self: center;
+      .header {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
         margin-bottom: 20px;
-      }
 
+        h2 {
+          margin: 0;
+        }
+      }
+    }
+
+    .left {
       textarea {
         padding: 5px 10px;
         border-radius: 5px;
         min-height: 200px;
+      }
+    }
+
+    .right {
+      .markdown-container {
+        width: 100%;
+        min-height: 200px;
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 5px 10px;
       }
     }
   }
