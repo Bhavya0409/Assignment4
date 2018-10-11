@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import {renderToString} from 'react-dom/server';
 import ReactMarkdown from 'react-markdown';
+import $ from 'jquery';
 
 class App extends Component {
   state = {
@@ -49,19 +51,21 @@ class App extends Component {
                download={mdName + '.md'}
                href={URL.createObjectURL(new Blob([markdown]))}>
                 Download
-            '</a>
+            </a>
           </div>
         </div>
 
         <div className="col-sm col-md col-lg side right">
-          <h2>Markdown Text Here</h2>
+          <h2>Regular Text Here</h2>
           <div className="markdown-container">
             <ReactMarkdown source={markdown}/>
           </div>
 
           <div className="download-section">
             <input type="text" placeholder='Name of File (i.e. "my-file")' value={htmlName} onChange={this.updateHtmlName}/>
-              <a className={'btn btn-primary ' + this.getDisabled(2)} download={htmlName + '.html'}>Download</a>
+              <a className={'btn btn-primary ' + this.getDisabled(2)}
+                 download={htmlName + '.html'}
+                 href={URL.createObjectURL(new Blob([$(".markdown-container").html()], {type: 'text/html'}))}>Download</a>
           </div>
         </div>
       </div>
