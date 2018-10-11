@@ -6,14 +6,23 @@
       display: flex;
       flex-flow: column;
       margin-right: 20px;
-      .header {
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .download-section {
         display: flex;
         flex-flow: row;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-top: 20px;
 
-        h2 {
-          margin: 0;
+        input {
+          padding: 5px 10px;
+          width: 50%;
+        }
+
+        a {
+          color: white;
         }
       }
     }
